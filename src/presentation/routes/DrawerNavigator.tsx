@@ -2,18 +2,21 @@ import { DrawerContentComponentProps, DrawerContentScrollView, DrawerItemList, c
 import { StackNavigator } from './StackNavigator';
 import { ProfileScreen } from '../screens/profile/ProfileScreen';
 import { globalColor } from '../theme/theme';
-import { View } from 'react-native';
+import { View, useWindowDimensions } from 'react-native';
 
 const Drawer = createDrawerNavigator();
 
 export const DrawerNavigator = () => {
+
+  const dimensions = useWindowDimensions()
+
   return (
     <Drawer.Navigator 
       drawerContent={(props) => <CustomDrawer {...props} />}
 
       screenOptions={{
         headerShown: false,
-        drawerType: 'slide',
+        drawerType: dimensions.width > 758 ? 'permanent' : 'slide',
         drawerActiveBackgroundColor: globalColor.primary,
         drawerActiveTintColor: 'white',
         drawerInactiveTintColor: globalColor.primary,
