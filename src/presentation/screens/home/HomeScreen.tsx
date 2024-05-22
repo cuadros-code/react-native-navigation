@@ -1,25 +1,22 @@
 import { View } from 'react-native'
 import { globalStyles } from '../../theme/theme'
-import { useNavigation } from '@react-navigation/native'
+import { NavigationProp, useNavigation } from '@react-navigation/native'
 import { PrimaryButton } from '../../components/PrimaryButton'
+import { RootStackProps } from '../../routes/StackNavigator'
 
 export const HomeScreen = () => {
 
-  const navigation = useNavigation()
-
-  const onNavigate = ( route: string ) => {
-    navigation.navigate( route as never )
-  }
+  const navigation = useNavigation<NavigationProp<RootStackProps>>()
 
   return (
     <View style={globalStyles.container}>
       <PrimaryButton 
-        onPress={() => onNavigate('Products')}
+        onPress={() => navigation.navigate('Products')}
         label='Productos'
       />
 
       <PrimaryButton 
-        onPress={() => onNavigate('Settings')}
+        onPress={() => navigation.navigate('Settings')}
         label='Settings'
       />
     </View>
