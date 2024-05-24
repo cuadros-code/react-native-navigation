@@ -3,6 +3,7 @@ import { StackNavigator } from './StackNavigator';
 import { ProfileScreen } from '../screens/profile/ProfileScreen';
 import { globalColor } from '../theme/theme';
 import { View, useWindowDimensions } from 'react-native';
+import { BottomNavigator } from './BottomNavigator';
 
 const Drawer = createDrawerNavigator();
 
@@ -13,7 +14,6 @@ export const DrawerNavigator = () => {
   return (
     <Drawer.Navigator 
       drawerContent={(props) => <CustomDrawer {...props} />}
-
       screenOptions={{
         headerShown: false,
         drawerType: dimensions.width > 758 ? 'permanent' : 'slide',
@@ -26,7 +26,8 @@ export const DrawerNavigator = () => {
         }
       }}
     >
-      <Drawer.Screen name="StackNavigator" component={StackNavigator} />
+      {/* <Drawer.Screen name="StackNavigator" component={StackNavigator} /> */}
+      <Drawer.Screen name="Tabs" component={BottomNavigator} />
       <Drawer.Screen name="Profile" component={ProfileScreen} />
     </Drawer.Navigator>
 
