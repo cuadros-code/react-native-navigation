@@ -5,6 +5,7 @@ import { Tab3Screen } from '../screens/tabs/Tab3Screen';
 import { Text } from 'react-native';
 import TopTabNavigator from './TopTabNavigator';
 import { StackNavigator } from './StackNavigator';
+import Icon from '../components/Icon';
 
 const Tab = createBottomTabNavigator();
 
@@ -32,17 +33,26 @@ export const BottomNavigator = () => {
     >
       <Tab.Screen 
         name="Tab1" 
-        options={{ title: 'Tab 1', tabBarIcon: ({color}) => (<Text style={{ color }} >Tab 1</Text>) }} 
+        options={{ 
+          title: 'Tab 1', 
+          tabBarIcon: ({color}) => (<Icon color={color} name='home-outline' />) 
+        }} 
         component={Tab1Screen} 
       />
       <Tab.Screen 
         name="Tab2" 
-        options={{ title: 'Tab 2', tabBarIcon: ({color}) => (<Text style={{ color }} >Tab 2</Text>) }} 
+        options={{ 
+          title: 'Tab 2', 
+          tabBarIcon: ({color}) => (<Icon color={color} name='file-tray-stacked-outline' />)
+        }} 
         component={TopTabNavigator} 
       />
       <Tab.Screen 
         name="Tab3" 
-        options={{ title: 'Tab 3', tabBarIcon: ({color}) => (<Text style={{ color }} >Tab 3</Text>) }} 
+        options={{ 
+          title: 'Tab 3', 
+          tabBarIcon: ({color}) => (<Icon color={color} name='cog-outline' />) 
+        }} 
         component={StackNavigator} 
       />
     </Tab.Navigator>
