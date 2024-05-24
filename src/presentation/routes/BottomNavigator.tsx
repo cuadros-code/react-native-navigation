@@ -3,6 +3,7 @@ import { Tab1Screen } from '../screens/tabs/Tab1Screen';
 import { Tab2Screen } from '../screens/tabs/Tab2Screen';
 import { Tab3Screen } from '../screens/tabs/Tab3Screen';
 import { Text } from 'react-native';
+import TopTabNavigator from './TopTabNavigator';
 
 const Tab = createBottomTabNavigator();
 
@@ -36,7 +37,7 @@ export const BottomNavigator = () => {
       <Tab.Screen 
         name="Tab2" 
         options={{ title: 'Tab 2', tabBarIcon: ({color}) => (<Text style={{ color }} >Tab 2</Text>) }} 
-        component={Tab2Screen} 
+        component={TopTabNavigator} 
       />
       <Tab.Screen 
         name="Tab3" 

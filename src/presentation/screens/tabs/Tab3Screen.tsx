@@ -5,7 +5,7 @@ export const Tab3Screen = () => {
   return (
     <View>
       <HamburgerMenu />
-      <Text>Tab1Screen</Text>
+      <Text>Tab3Screen</Text>
     </View>
   )
 }
